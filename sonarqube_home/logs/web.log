@@ -545,3 +545,55 @@ Caused by: org.apache.catalina.LifecycleException: A child container failed duri
 	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
 	... 13 common frames omitted
 2021.09.22 19:57:22 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2021.09.22 19:58:21 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2021.09.22 19:58:22 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2021.09.22 19:58:24 INFO  web[][o.e.p.PluginsService] no modules loaded
+2021.09.22 19:58:24 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2021.09.22 19:58:24 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2021.09.22 19:58:24 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2021.09.22 19:58:29 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2021.09.22 19:58:29 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 7.9.5.38598 / cc0bd7b4d9e201f8b4939e5b674637feabf75207
+2021.09.22 19:58:31 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:58:31 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: /opt/sonarqube/data
+2021.09.22 19:58:31 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:58:32 WARN  web[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2021.09.22 19:58:34 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2021.09.22 19:58:34 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2021.09.22 19:58:35 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@64115625 [pattern=UrlPattern{inclusions=[/api/system/migrate_db.*, ...], exclusions=[/api/properties*, ...]}]
+2021.09.22 19:58:37 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2021.09.22 19:58:41 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2021.09.22 19:58:44 INFO  web[][o.s.s.e.IndexCreator] Index [metadatas] is read-only. Making it writable...
+2021.09.22 19:58:46 INFO  web[][o.s.s.e.IndexCreator] Index [components] is read-only. Making it writable...
+2021.09.22 19:58:47 INFO  web[][o.s.s.e.IndexCreator] Index [projectmeasures] is read-only. Making it writable...
+2021.09.22 19:58:47 INFO  web[][o.s.s.e.IndexCreator] Index [rules] is read-only. Making it writable...
+2021.09.22 19:58:48 INFO  web[][o.s.s.e.IndexCreator] Index [issues] is read-only. Making it writable...
+2021.09.22 19:58:48 INFO  web[][o.s.s.e.IndexCreator] Index [users] is read-only. Making it writable...
+2021.09.22 19:58:49 INFO  web[][o.s.s.e.IndexCreator] Index [views] is read-only. Making it writable...
+2021.09.22 19:58:50 INFO  web[][o.s.s.s.LogServerId] Server ID: BF41A1F2-AXwPECIgo4VoZzUngnoF
+2021.09.22 19:58:51 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/plugins/download
+2021.09.22 19:58:52 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/permissions/search_templates
+2021.09.22 19:58:52 INFO  web[][o.s.s.t.TelemetryDaemon] Sharing of SonarQube statistics is enabled.
+2021.09.22 19:58:52 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2021.09.22 19:58:52 INFO  web[][o.s.s.s.GeneratePluginIndex] Generate scanner plugin index
+2021.09.22 19:58:52 INFO  web[][o.s.s.s.RegisterPlugins] Register plugins
+2021.09.22 19:58:52 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
+2021.09.22 19:58:53 INFO  web[][o.s.s.r.RegisterRules] Register rules
+2021.09.22 19:58:53 INFO  web[][o.s.s.q.BuiltInQProfileRepositoryImpl] Load quality profiles
+2021.09.22 19:58:53 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2021.09.22 19:58:53 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2021.09.22 19:58:53 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@785ae3e [pattern=UrlPattern{inclusions=[/api/issues/delete_comment.*, ...], exclusions=[/api/properties*, ...]}]
+2021.09.22 19:58:53 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@64d98656 [pattern=UrlPattern{inclusions=[/api/properties/*], exclusions=[]}]
+2021.09.22 19:58:53 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceReroutingFilter@4ca1bfdb [pattern=UrlPattern{inclusions=[/api/components/bulk_update_key, ...], exclusions=[]}]
+2021.09.22 19:58:53 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@2571b9b3 [pattern=UrlPattern{inclusions=[/sessions/init/*], exclusions=[]}]
+2021.09.22 19:58:53 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@7af8977b [pattern=UrlPattern{inclusions=[/oauth2/callback/*], exclusions=[]}]
+2021.09.22 19:58:53 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@25a0ac2c [pattern=UrlPattern{inclusions=[/api/authentication/login], exclusions=[]}]
+2021.09.22 19:58:53 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@15f07286 [pattern=UrlPattern{inclusions=[/api/authentication/logout], exclusions=[]}]
+2021.09.22 19:58:53 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@19092e8d [pattern=UrlPattern{inclusions=[/api/authentication/validate], exclusions=[]}]
+2021.09.22 19:58:54 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [issues/auth] ...
+2021.09.22 19:58:55 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [issues/auth] done | time=970ms
+2021.09.22 19:58:55 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [projectmeasures/auth/projectmeasure] ...
+2021.09.22 19:58:55 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [projectmeasures/auth/projectmeasure] done | time=929ms
+2021.09.22 19:58:55 INFO  web[][o.s.s.q.ProjectsInWarningDaemon] Counting number of projects in warning is enabled.
+2021.09.22 19:58:55 INFO  web[][o.s.s.p.p.PlatformLevelStartup] Running Community Edition
+2021.09.22 19:58:55 INFO  web[][o.s.s.p.Platform] WebServer is operational
+2021.09.22 19:58:56 INFO  web[][o.s.s.q.ProjectsInWarningDaemon] Counting number of projects in warning will be disabled as there are no more projects in warning.

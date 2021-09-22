@@ -4,3 +4,10 @@
 2021.09.22 19:59:02 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
 2021.09.22 19:59:02 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
 2021.09.22 19:59:02 INFO  ce[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2021.09.22 19:59:09 INFO  ce[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2021.09.22 19:59:09 INFO  ce[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:59:10 WARN  ce[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2021.09.22 19:59:14 INFO  ce[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2021.09.22 19:59:15 INFO  ce[][o.s.c.c.CePluginRepository] Load plugins
+2021.09.22 19:59:17 INFO  ce[][o.s.c.c.ComputeEngineContainerImpl] Running Community edition
+2021.09.22 19:59:17 INFO  ce[][o.s.ce.app.CeServer] Compute Engine is operational
