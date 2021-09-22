@@ -1,0 +1,179 @@
+2021.09.22 19:49:40 INFO  es[][o.e.e.NodeEnvironment] using [1] data paths, mounts [[/opt/sonarqube/data (C:\)]], net usable_space [5.1gb], net total_space [117.4gb], types [9p]
+2021.09.22 19:49:40 INFO  es[][o.e.e.NodeEnvironment] heap size [495.3mb], compressed ordinary object pointers [true]
+2021.09.22 19:49:40 INFO  es[][o.e.n.Node] node name [sonarqube], node ID [ZnYDwMfwRxq9okygyd6suQ]
+2021.09.22 19:49:40 INFO  es[][o.e.n.Node] version[6.8.0], pid[29], build[default/tar/65b6179/2019-05-15T20:06:13.172855Z], OS[Linux/5.10.16.3-microsoft-standard-WSL2/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/11.0.10/11.0.10+9]
+2021.09.22 19:49:40 INFO  es[][o.e.n.Node] JVM arguments [-XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/opt/sonarqube/temp, -XX:ErrorFile=../logs/es_hs_err_pid%p.log, -Xms512m, -Xmx512m, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/opt/sonarqube/elasticsearch, -Des.path.conf=/opt/sonarqube/temp/conf/es, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+2021.09.22 19:49:43 INFO  es[][o.e.p.PluginsService] loaded module [analysis-common]
+2021.09.22 19:49:43 INFO  es[][o.e.p.PluginsService] loaded module [lang-painless]
+2021.09.22 19:49:43 INFO  es[][o.e.p.PluginsService] loaded module [mapper-extras]
+2021.09.22 19:49:43 INFO  es[][o.e.p.PluginsService] loaded module [parent-join]
+2021.09.22 19:49:43 INFO  es[][o.e.p.PluginsService] loaded module [percolator]
+2021.09.22 19:49:43 INFO  es[][o.e.p.PluginsService] loaded module [reindex]
+2021.09.22 19:49:43 INFO  es[][o.e.p.PluginsService] loaded module [repository-url]
+2021.09.22 19:49:43 INFO  es[][o.e.p.PluginsService] loaded module [transport-netty4]
+2021.09.22 19:49:43 INFO  es[][o.e.p.PluginsService] no plugins loaded
+2021.09.22 19:50:06 WARN  es[][o.e.d.c.s.Settings] [http.enabled] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+2021.09.22 19:50:16 INFO  es[][o.e.d.DiscoveryModule] using discovery type [zen] and host providers [settings]
+2021.09.22 19:50:21 INFO  es[][o.e.n.Node] initialized
+2021.09.22 19:50:21 INFO  es[][o.e.n.Node] starting ...
+2021.09.22 19:50:23 INFO  es[][o.e.t.TransportService] publish_address {127.0.0.1:9001}, bound_addresses {127.0.0.1:9001}
+2021.09.22 19:50:23 WARN  es[][o.e.b.BootstrapChecks] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+2021.09.22 19:50:24 INFO  es[][o.e.m.j.JvmGcMonitorService] [gc][2] overhead, spent [594ms] collecting in the last [1.2s]
+2021.09.22 19:50:29 INFO  es[][o.e.c.s.MasterService] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{rrRJ95n_QEuov5RvWCYdnQ}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}
+2021.09.22 19:50:29 INFO  es[][o.e.c.s.ClusterApplierService] new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{rrRJ95n_QEuov5RvWCYdnQ}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}, reason: apply cluster state (from master [master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{rrRJ95n_QEuov5RvWCYdnQ}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+2021.09.22 19:50:29 INFO  es[][o.e.n.Node] started
+2021.09.22 19:50:30 INFO  es[][o.e.g.GatewayService] recovered [0] indices into cluster_state
+2021.09.22 19:50:59 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:51:29 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:51:42 INFO  es[][o.e.c.m.MetaDataCreateIndexService] [metadatas] creating index, cause [api], templates [], shards [1]/[0], mappings []
+2021.09.22 19:51:49 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[metadatas][0]] ...]).
+2021.09.22 19:51:51 INFO  es[][o.e.c.m.MetaDataMappingService] [metadatas/oP06HGHuTN-4c0InBa1YzA] create_mapping [metadata]
+2021.09.22 19:51:55 INFO  es[][o.e.c.m.MetaDataCreateIndexService] [components] creating index, cause [api], templates [], shards [5]/[0], mappings []
+2021.09.22 19:51:59 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:52:00 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[components][4]] ...]).
+2021.09.22 19:52:04 INFO  es[][o.e.n.Node] stopping ...
+2021.09.22 19:52:08 INFO  es[][o.e.n.Node] stopped
+2021.09.22 19:52:08 INFO  es[][o.e.n.Node] closing ...
+2021.09.22 19:52:08 INFO  es[][o.e.n.Node] closed
+2021.09.22 19:52:25 INFO  es[][o.e.e.NodeEnvironment] using [1] data paths, mounts [[/opt/sonarqube/data (C:\)]], net usable_space [5.1gb], net total_space [117.4gb], types [9p]
+2021.09.22 19:52:25 INFO  es[][o.e.e.NodeEnvironment] heap size [495.3mb], compressed ordinary object pointers [true]
+2021.09.22 19:52:26 INFO  es[][o.e.n.Node] node name [sonarqube], node ID [ZnYDwMfwRxq9okygyd6suQ]
+2021.09.22 19:52:26 INFO  es[][o.e.n.Node] version[6.8.0], pid[28], build[default/tar/65b6179/2019-05-15T20:06:13.172855Z], OS[Linux/5.10.16.3-microsoft-standard-WSL2/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/11.0.10/11.0.10+9]
+2021.09.22 19:52:26 INFO  es[][o.e.n.Node] JVM arguments [-XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/opt/sonarqube/temp, -XX:ErrorFile=../logs/es_hs_err_pid%p.log, -Xms512m, -Xmx512m, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/opt/sonarqube/elasticsearch, -Des.path.conf=/opt/sonarqube/temp/conf/es, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+2021.09.22 19:52:28 INFO  es[][o.e.p.PluginsService] loaded module [analysis-common]
+2021.09.22 19:52:28 INFO  es[][o.e.p.PluginsService] loaded module [lang-painless]
+2021.09.22 19:52:29 INFO  es[][o.e.p.PluginsService] loaded module [mapper-extras]
+2021.09.22 19:52:29 INFO  es[][o.e.p.PluginsService] loaded module [parent-join]
+2021.09.22 19:52:29 INFO  es[][o.e.p.PluginsService] loaded module [percolator]
+2021.09.22 19:52:29 INFO  es[][o.e.p.PluginsService] loaded module [reindex]
+2021.09.22 19:52:29 INFO  es[][o.e.p.PluginsService] loaded module [repository-url]
+2021.09.22 19:52:29 INFO  es[][o.e.p.PluginsService] loaded module [transport-netty4]
+2021.09.22 19:52:29 INFO  es[][o.e.p.PluginsService] no plugins loaded
+2021.09.22 19:52:37 WARN  es[][o.e.d.c.s.Settings] [http.enabled] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+2021.09.22 19:52:41 INFO  es[][o.e.d.DiscoveryModule] using discovery type [zen] and host providers [settings]
+2021.09.22 19:52:42 INFO  es[][o.e.n.Node] initialized
+2021.09.22 19:52:42 INFO  es[][o.e.n.Node] starting ...
+2021.09.22 19:52:43 INFO  es[][o.e.t.TransportService] publish_address {127.0.0.1:9001}, bound_addresses {127.0.0.1:9001}
+2021.09.22 19:52:43 WARN  es[][o.e.b.BootstrapChecks] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+2021.09.22 19:52:47 INFO  es[][o.e.c.s.MasterService] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{U8C6iaVeQk2ILI53oVZbIQ}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}
+2021.09.22 19:52:47 INFO  es[][o.e.c.s.ClusterApplierService] new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{U8C6iaVeQk2ILI53oVZbIQ}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}, reason: apply cluster state (from master [master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{U8C6iaVeQk2ILI53oVZbIQ}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+2021.09.22 19:52:47 INFO  es[][o.e.n.Node] started
+2021.09.22 19:52:52 INFO  es[][o.e.g.GatewayService] recovered [2] indices into cluster_state
+2021.09.22 19:52:55 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[metadatas][0]] ...]).
+2021.09.22 19:53:18 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:53:37 INFO  es[][o.e.c.m.MetaDataCreateIndexService] [projectmeasures] creating index, cause [api], templates [], shards [5]/[0], mappings []
+2021.09.22 19:53:41 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[projectmeasures][4]] ...]).
+2021.09.22 19:53:41 INFO  es[][o.e.c.m.MetaDataMappingService] [projectmeasures/Q1ZT9up-T8mOFHs-mllJVg] create_mapping [auth]
+2021.09.22 19:53:48 INFO  es[][o.e.c.m.MetaDataCreateIndexService] [rules] creating index, cause [api], templates [], shards [2]/[0], mappings []
+2021.09.22 19:53:48 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:53:50 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[rules][0]] ...]).
+2021.09.22 19:53:50 INFO  es[][o.e.c.m.MetaDataMappingService] [rules/fXOocCC0RuO_bpgCI3jkKw] create_mapping [rule]
+2021.09.22 19:53:52 INFO  es[][o.e.n.Node] stopping ...
+2021.09.22 19:53:54 INFO  es[][o.e.n.Node] stopped
+2021.09.22 19:53:54 INFO  es[][o.e.n.Node] closing ...
+2021.09.22 19:53:54 INFO  es[][o.e.n.Node] closed
+2021.09.22 19:54:09 INFO  es[][o.e.e.NodeEnvironment] using [1] data paths, mounts [[/opt/sonarqube/data (C:\)]], net usable_space [5.1gb], net total_space [117.4gb], types [9p]
+2021.09.22 19:54:09 INFO  es[][o.e.e.NodeEnvironment] heap size [495.3mb], compressed ordinary object pointers [true]
+2021.09.22 19:54:14 INFO  es[][o.e.n.Node] node name [sonarqube], node ID [ZnYDwMfwRxq9okygyd6suQ]
+2021.09.22 19:54:14 INFO  es[][o.e.n.Node] version[6.8.0], pid[28], build[default/tar/65b6179/2019-05-15T20:06:13.172855Z], OS[Linux/5.10.16.3-microsoft-standard-WSL2/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/11.0.10/11.0.10+9]
+2021.09.22 19:54:14 INFO  es[][o.e.n.Node] JVM arguments [-XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/opt/sonarqube/temp, -XX:ErrorFile=../logs/es_hs_err_pid%p.log, -Xms512m, -Xmx512m, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/opt/sonarqube/elasticsearch, -Des.path.conf=/opt/sonarqube/temp/conf/es, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+2021.09.22 19:54:16 INFO  es[][o.e.p.PluginsService] loaded module [analysis-common]
+2021.09.22 19:54:16 INFO  es[][o.e.p.PluginsService] loaded module [lang-painless]
+2021.09.22 19:54:16 INFO  es[][o.e.p.PluginsService] loaded module [mapper-extras]
+2021.09.22 19:54:16 INFO  es[][o.e.p.PluginsService] loaded module [parent-join]
+2021.09.22 19:54:16 INFO  es[][o.e.p.PluginsService] loaded module [percolator]
+2021.09.22 19:54:16 INFO  es[][o.e.p.PluginsService] loaded module [reindex]
+2021.09.22 19:54:16 INFO  es[][o.e.p.PluginsService] loaded module [repository-url]
+2021.09.22 19:54:16 INFO  es[][o.e.p.PluginsService] loaded module [transport-netty4]
+2021.09.22 19:54:16 INFO  es[][o.e.p.PluginsService] no plugins loaded
+2021.09.22 19:54:21 WARN  es[][o.e.d.c.s.Settings] [http.enabled] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+2021.09.22 19:54:24 INFO  es[][o.e.d.DiscoveryModule] using discovery type [zen] and host providers [settings]
+2021.09.22 19:54:26 INFO  es[][o.e.n.Node] initialized
+2021.09.22 19:54:26 INFO  es[][o.e.n.Node] starting ...
+2021.09.22 19:54:27 INFO  es[][o.e.t.TransportService] publish_address {127.0.0.1:9001}, bound_addresses {127.0.0.1:9001}
+2021.09.22 19:54:27 WARN  es[][o.e.b.BootstrapChecks] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+2021.09.22 19:54:30 INFO  es[][o.e.c.s.MasterService] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{3YlCeLv3ReuOAlbYcqfnZA}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}
+2021.09.22 19:54:30 INFO  es[][o.e.c.s.ClusterApplierService] new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{3YlCeLv3ReuOAlbYcqfnZA}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}, reason: apply cluster state (from master [master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{3YlCeLv3ReuOAlbYcqfnZA}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+2021.09.22 19:54:30 INFO  es[][o.e.n.Node] started
+2021.09.22 19:54:33 INFO  es[][o.e.g.GatewayService] recovered [4] indices into cluster_state
+2021.09.22 19:54:54 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[metadatas][0]] ...]).
+2021.09.22 19:55:01 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:55:29 INFO  es[][o.e.c.m.MetaDataCreateIndexService] [issues] creating index, cause [api], templates [], shards [5]/[0], mappings []
+2021.09.22 19:55:31 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:55:35 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[issues][4]] ...]).
+2021.09.22 19:55:36 INFO  es[][o.e.n.Node] stopping ...
+2021.09.22 19:55:36 INFO  es[][o.e.n.Node] stopped
+2021.09.22 19:55:36 INFO  es[][o.e.n.Node] closing ...
+2021.09.22 19:55:36 INFO  es[][o.e.n.Node] closed
+2021.09.22 19:55:53 INFO  es[][o.e.e.NodeEnvironment] using [1] data paths, mounts [[/opt/sonarqube/data (C:\)]], net usable_space [5.1gb], net total_space [117.4gb], types [9p]
+2021.09.22 19:55:53 INFO  es[][o.e.e.NodeEnvironment] heap size [495.3mb], compressed ordinary object pointers [true]
+2021.09.22 19:55:57 INFO  es[][o.e.n.Node] node name [sonarqube], node ID [ZnYDwMfwRxq9okygyd6suQ]
+2021.09.22 19:55:57 INFO  es[][o.e.n.Node] version[6.8.0], pid[27], build[default/tar/65b6179/2019-05-15T20:06:13.172855Z], OS[Linux/5.10.16.3-microsoft-standard-WSL2/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/11.0.10/11.0.10+9]
+2021.09.22 19:55:57 INFO  es[][o.e.n.Node] JVM arguments [-XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/opt/sonarqube/temp, -XX:ErrorFile=../logs/es_hs_err_pid%p.log, -Xms512m, -Xmx512m, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/opt/sonarqube/elasticsearch, -Des.path.conf=/opt/sonarqube/temp/conf/es, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+2021.09.22 19:55:59 INFO  es[][o.e.p.PluginsService] loaded module [analysis-common]
+2021.09.22 19:55:59 INFO  es[][o.e.p.PluginsService] loaded module [lang-painless]
+2021.09.22 19:55:59 INFO  es[][o.e.p.PluginsService] loaded module [mapper-extras]
+2021.09.22 19:55:59 INFO  es[][o.e.p.PluginsService] loaded module [parent-join]
+2021.09.22 19:55:59 INFO  es[][o.e.p.PluginsService] loaded module [percolator]
+2021.09.22 19:55:59 INFO  es[][o.e.p.PluginsService] loaded module [reindex]
+2021.09.22 19:55:59 INFO  es[][o.e.p.PluginsService] loaded module [repository-url]
+2021.09.22 19:55:59 INFO  es[][o.e.p.PluginsService] loaded module [transport-netty4]
+2021.09.22 19:55:59 INFO  es[][o.e.p.PluginsService] no plugins loaded
+2021.09.22 19:56:06 WARN  es[][o.e.d.c.s.Settings] [http.enabled] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+2021.09.22 19:56:11 INFO  es[][o.e.d.DiscoveryModule] using discovery type [zen] and host providers [settings]
+2021.09.22 19:56:12 INFO  es[][o.e.n.Node] initialized
+2021.09.22 19:56:12 INFO  es[][o.e.n.Node] starting ...
+2021.09.22 19:56:12 INFO  es[][o.e.t.TransportService] publish_address {127.0.0.1:9001}, bound_addresses {127.0.0.1:9001}
+2021.09.22 19:56:13 WARN  es[][o.e.b.BootstrapChecks] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+2021.09.22 19:56:16 INFO  es[][o.e.c.s.MasterService] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{kePjj1tnTuyykMi-7aY1oQ}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}
+2021.09.22 19:56:16 INFO  es[][o.e.c.s.ClusterApplierService] new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{kePjj1tnTuyykMi-7aY1oQ}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}, reason: apply cluster state (from master [master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{kePjj1tnTuyykMi-7aY1oQ}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+2021.09.22 19:56:16 INFO  es[][o.e.n.Node] started
+2021.09.22 19:56:18 INFO  es[][o.e.g.GatewayService] recovered [5] indices into cluster_state
+2021.09.22 19:56:29 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[metadatas][0]] ...]).
+2021.09.22 19:56:46 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:56:51 INFO  es[][o.e.c.m.MetaDataCreateIndexService] [users] creating index, cause [api], templates [], shards [1]/[0], mappings []
+2021.09.22 19:56:53 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[users][0]] ...]).
+2021.09.22 19:56:54 INFO  es[][o.e.c.m.MetaDataMappingService] [users/U9L5N8RSRaqHS9SwCQ1lKg] create_mapping [user]
+2021.09.22 19:56:54 INFO  es[][o.e.c.m.MetaDataCreateIndexService] [views] creating index, cause [api], templates [], shards [5]/[0], mappings []
+2021.09.22 19:56:58 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[views][4]] ...]).
+2021.09.22 19:56:58 INFO  es[][o.e.c.m.MetaDataMappingService] [views/oY7fJTOhQUWWgWjDoVr04A] create_mapping [view]
+2021.09.22 19:57:04 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [30s] to [-1]
+2021.09.22 19:57:04 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [30s] to [-1]
+2021.09.22 19:57:07 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [-1] to [30s]
+2021.09.22 19:57:07 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [-1] to [30s]
+2021.09.22 19:57:08 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [30s] to [-1]
+2021.09.22 19:57:08 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [30s] to [-1]
+2021.09.22 19:57:09 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [-1] to [30s]
+2021.09.22 19:57:09 INFO  es[][o.e.c.s.IndexScopedSettings] updating [index.refresh_interval] from [-1] to [30s]
+2021.09.22 19:57:17 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:57:22 INFO  es[][o.e.n.Node] stopping ...
+2021.09.22 19:57:24 INFO  es[][o.e.n.Node] stopped
+2021.09.22 19:57:24 INFO  es[][o.e.n.Node] closing ...
+2021.09.22 19:57:24 INFO  es[][o.e.n.Node] closed
+2021.09.22 19:57:37 INFO  es[][o.e.e.NodeEnvironment] using [1] data paths, mounts [[/opt/sonarqube/data (C:\)]], net usable_space [5.1gb], net total_space [117.4gb], types [9p]
+2021.09.22 19:57:37 INFO  es[][o.e.e.NodeEnvironment] heap size [495.3mb], compressed ordinary object pointers [true]
+2021.09.22 19:57:39 INFO  es[][o.e.n.Node] node name [sonarqube], node ID [ZnYDwMfwRxq9okygyd6suQ]
+2021.09.22 19:57:39 INFO  es[][o.e.n.Node] version[6.8.0], pid[27], build[default/tar/65b6179/2019-05-15T20:06:13.172855Z], OS[Linux/5.10.16.3-microsoft-standard-WSL2/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/11.0.10/11.0.10+9]
+2021.09.22 19:57:39 INFO  es[][o.e.n.Node] JVM arguments [-XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -Des.networkaddress.cache.ttl=60, -Des.networkaddress.cache.negative.ttl=10, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Djava.io.tmpdir=/opt/sonarqube/temp, -XX:ErrorFile=../logs/es_hs_err_pid%p.log, -Xms512m, -Xmx512m, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/opt/sonarqube/elasticsearch, -Des.path.conf=/opt/sonarqube/temp/conf/es, -Des.distribution.flavor=default, -Des.distribution.type=tar]
+2021.09.22 19:57:40 INFO  es[][o.e.p.PluginsService] loaded module [analysis-common]
+2021.09.22 19:57:40 INFO  es[][o.e.p.PluginsService] loaded module [lang-painless]
+2021.09.22 19:57:40 INFO  es[][o.e.p.PluginsService] loaded module [mapper-extras]
+2021.09.22 19:57:40 INFO  es[][o.e.p.PluginsService] loaded module [parent-join]
+2021.09.22 19:57:40 INFO  es[][o.e.p.PluginsService] loaded module [percolator]
+2021.09.22 19:57:41 INFO  es[][o.e.p.PluginsService] loaded module [reindex]
+2021.09.22 19:57:41 INFO  es[][o.e.p.PluginsService] loaded module [repository-url]
+2021.09.22 19:57:41 INFO  es[][o.e.p.PluginsService] loaded module [transport-netty4]
+2021.09.22 19:57:41 INFO  es[][o.e.p.PluginsService] no plugins loaded
+2021.09.22 19:57:45 WARN  es[][o.e.d.c.s.Settings] [http.enabled] setting was deprecated in Elasticsearch and will be removed in a future release! See the breaking changes documentation for the next major version.
+2021.09.22 19:57:50 INFO  es[][o.e.d.DiscoveryModule] using discovery type [zen] and host providers [settings]
+2021.09.22 19:57:51 INFO  es[][o.e.n.Node] initialized
+2021.09.22 19:57:51 INFO  es[][o.e.n.Node] starting ...
+2021.09.22 19:57:51 INFO  es[][o.e.t.TransportService] publish_address {127.0.0.1:9001}, bound_addresses {127.0.0.1:9001}
+2021.09.22 19:57:51 WARN  es[][o.e.b.BootstrapChecks] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+2021.09.22 19:57:54 INFO  es[][o.e.c.s.MasterService] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{Ncq3GgedRrayWWB7aDmx8Q}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}
+2021.09.22 19:57:54 INFO  es[][o.e.c.s.ClusterApplierService] new_master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{Ncq3GgedRrayWWB7aDmx8Q}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube}, reason: apply cluster state (from master [master {sonarqube}{ZnYDwMfwRxq9okygyd6suQ}{Ncq3GgedRrayWWB7aDmx8Q}{127.0.0.1}{127.0.0.1:9001}{rack_id=sonarqube} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+2021.09.22 19:57:54 INFO  es[][o.e.n.Node] started
+2021.09.22 19:57:59 INFO  es[][o.e.g.GatewayService] recovered [7] indices into cluster_state
+2021.09.22 19:58:20 INFO  es[][o.e.c.r.a.AllocationService] Cluster health status changed from [RED] to [GREEN] (reason: [shards started [[metadatas][0]] ...]).
+2021.09.22 19:58:27 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only
+2021.09.22 19:58:58 WARN  es[][o.e.c.r.a.DiskThresholdMonitor] flood stage disk watermark [95%] exceeded on [ZnYDwMfwRxq9okygyd6suQ][sonarqube][/opt/sonarqube/data/es6/nodes/0] free: 5.1gb[4.3%], all indices on this node will be marked read-only

@@ -1,0 +1,547 @@
+2021.09.22 19:50:35 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2021.09.22 19:50:41 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2021.09.22 19:50:51 INFO  web[][o.e.p.PluginsService] no modules loaded
+2021.09.22 19:50:51 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2021.09.22 19:50:51 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2021.09.22 19:50:51 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2021.09.22 19:51:09 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2021.09.22 19:51:09 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 7.9.5.38598 / cc0bd7b4d9e201f8b4939e5b674637feabf75207
+2021.09.22 19:51:11 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:51:11 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: /opt/sonarqube/data
+2021.09.22 19:51:11 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:51:13 WARN  web[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2021.09.22 19:51:20 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2021.09.22 19:51:20 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2021.09.22 19:51:21 INFO  web[][o.s.s.p.d.m.h.MigrationHistoryTableImpl] Creating table schema_migrations
+2021.09.22 19:51:23 INFO  web[][o.s.s.p.d.m.AutoDbMigration] Automatically perform DB migration on fresh install
+2021.09.22 19:51:27 INFO  web[][o.s.s.p.Platform] Database has been automatically updated
+2021.09.22 19:51:27 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@600e8312 [pattern=UrlPattern{inclusions=[/api/system/migrate_db.*, ...], exclusions=[/api/properties*, ...]}]
+2021.09.22 19:51:30 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2021.09.22 19:51:35 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2021.09.22 19:51:41 INFO  web[][o.s.s.e.IndexCreator] Create index [metadatas]
+2021.09.22 19:51:49 INFO  web[][o.s.s.e.IndexCreator] Create type metadatas/metadata
+2021.09.22 19:51:53 INFO  web[][o.s.s.e.IndexCreator] Create index [components]
+2021.09.22 19:52:00 INFO  web[][o.s.s.e.IndexCreator] Create type components/auth
+2021.09.22 19:52:00 ERROR web[][o.s.s.p.Platform] Background initialization failed. Stopping SonarQube
+java.lang.IllegalStateException: Fail to execute ES put mapping request on indices 'components' on type 'auth' with source '{"_routing":{"required":true},"_source":{"enabled":false},"dynamic":"false","properties":{"auth_allowAnyone":{"type":"boolean"},"auth_groupIds":{"type":"long"},"auth_userIds":{"type":"long"},"indexType":{"type":"keyword","norms":false,"store":false,"doc_values":false},"join_components":{"type":"join","relations":{"auth":"component"}},"key":{"doc_values":"true","fields":{"sortable_analyzer":{"analyzer":"sortable_analyzer","fielddata":"true","index":"true","norms":"false","store":"false","type":"text"}},"index":"true","norms":"false","store":"false","type":"keyword"},"language":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"name":{"fielddata":"true","fields":{"search_grams_analyzer":{"analyzer":"index_grams_analyzer","index":"true","norms":"false","search_analyzer":"search_grams_analyzer","store":"true","term_vector":"with_positions_offsets","type":"text"},"search_prefix_analyzer":{"analyzer":"index_prefix_analyzer","index":"true","norms":"false","search_analyzer":"search_prefix_analyzer","store":"true","term_vector":"with_positions_offsets","type":"text"},"search_prefix_case_insensitive_analyzer":{"analyzer":"index_prefix_case_insensitive_analyzer","index":"true","norms":"false","search_analyzer":"search_prefix_case_insensitive_analyzer","store":"true","term_vector":"with_positions_offsets","type":"text"},"sortable_analyzer":{"analyzer":"sortable_analyzer","fielddata":"true","index":"true","norms":"false","store":"true","term_vector":"with_positions_offsets","type":"text"}},"index":"true","norms":"false","store":"true","term_vector":"with_positions_offsets","type":"text"},"organization_uuid":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"project_uuid":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"qualifier":{"doc_values":"true","index":"true","norms":"true","store":"false","type":"keyword"},"uuid":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"}}}'
+	at org.sonar.server.es.request.ProxyPutMappingRequestBuilder.get(ProxyPutMappingRequestBuilder.java:44)
+	at org.sonar.server.es.request.ProxyPutMappingRequestBuilder.get(ProxyPutMappingRequestBuilder.java:32)
+	at org.sonar.server.es.IndexCreator.createIndex(IndexCreator.java:160)
+	at org.sonar.server.es.IndexCreator.lambda$start$1(IndexCreator.java:98)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(Unknown Source)
+	at java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.forEach(Unknown Source)
+	at org.sonar.server.es.IndexCreator.start(IndexCreator.java:95)
+	at org.sonar.core.platform.StartableCloseableSafeLifecyleStrategy.start(StartableCloseableSafeLifecyleStrategy.java:40)
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.start(AbstractInjectionFactory.java:84)
+	at org.picocontainer.behaviors.AbstractBehavior.start(AbstractBehavior.java:169)
+	at org.picocontainer.behaviors.Stored$RealComponentLifecycle.start(Stored.java:132)
+	at org.picocontainer.behaviors.Stored.start(Stored.java:110)
+	at org.picocontainer.DefaultPicoContainer.potentiallyStartAdapter(DefaultPicoContainer.java:1016)
+	at org.picocontainer.DefaultPicoContainer.startAdapters(DefaultPicoContainer.java:1009)
+	at org.picocontainer.DefaultPicoContainer.start(DefaultPicoContainer.java:767)
+	at org.sonar.core.platform.ComponentContainer.startComponents(ComponentContainer.java:135)
+	at org.sonar.server.platform.platformlevel.PlatformLevel.start(PlatformLevel.java:90)
+	at org.sonar.server.platform.platformlevel.PlatformLevel4.start(PlatformLevel4.java:545)
+	at org.sonar.server.platform.Platform.start(Platform.java:211)
+	at org.sonar.server.platform.Platform.startLevel34Containers(Platform.java:185)
+	at org.sonar.server.platform.Platform.access$500(Platform.java:46)
+	at org.sonar.server.platform.Platform$1.lambda$doRun$0(Platform.java:119)
+	at org.sonar.server.platform.Platform$AutoStarterRunnable.runIfNotAborted(Platform.java:371)
+	at org.sonar.server.platform.Platform$1.doRun(Platform.java:119)
+	at org.sonar.server.platform.Platform$AutoStarterRunnable.run(Platform.java:355)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.elasticsearch.cluster.block.ClusterBlockException: blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];
+	at org.elasticsearch.cluster.block.ClusterBlocks.indicesBlockedException(ClusterBlocks.java:229)
+	at org.elasticsearch.action.admin.indices.mapping.put.TransportPutMappingAction.checkBlock(TransportPutMappingAction.java:81)
+	at org.elasticsearch.action.admin.indices.mapping.put.TransportPutMappingAction.checkBlock(TransportPutMappingAction.java:46)
+	at org.elasticsearch.action.support.master.TransportMasterNodeAction$AsyncSingleAction.doStart(TransportMasterNodeAction.java:173)
+	at org.elasticsearch.action.support.master.TransportMasterNodeAction$AsyncSingleAction.start(TransportMasterNodeAction.java:164)
+	at org.elasticsearch.action.support.master.TransportMasterNodeAction.doExecute(TransportMasterNodeAction.java:141)
+	at org.elasticsearch.action.support.master.TransportMasterNodeAction.doExecute(TransportMasterNodeAction.java:59)
+	at org.elasticsearch.action.support.TransportAction$RequestFilterChain.proceed(TransportAction.java:167)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:139)
+	at org.elasticsearch.action.support.HandledTransportAction$TransportHandler.messageReceived(HandledTransportAction.java:89)
+	at org.elasticsearch.action.support.HandledTransportAction$TransportHandler.messageReceived(HandledTransportAction.java:80)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:66)
+	at org.elasticsearch.transport.TcpTransport$RequestHandler.doRun(TcpTransport.java:1087)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.common.util.concurrent.EsExecutors$DirectExecutorService.execute(EsExecutors.java:192)
+	at org.elasticsearch.transport.TcpTransport.handleRequest(TcpTransport.java:1046)
+	at org.elasticsearch.transport.TcpTransport.messageReceived(TcpTransport.java:932)
+	at org.elasticsearch.transport.TcpTransport.inboundMessage(TcpTransport.java:763)
+	at org.elasticsearch.transport.netty4.Netty4MessageChannelHandler.channelRead(Netty4MessageChannelHandler.java:53)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:323)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:297)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:241)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:556)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:510)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at java.lang.Thread.run(Unknown Source)
+2021.09.22 19:52:00 INFO  web[][o.s.p.ProcessEntryPoint] Hard stopping process
+2021.09.22 19:52:01 WARN  web[][o.s.p.ProcessEntryPoint$HardStopperThread] Can not stop in 1000ms
+2021.09.22 19:52:01 WARN  web[][o.s.s.a.EmbeddedTomcat] Failed to stop web server
+org.apache.catalina.LifecycleException: Failed to stop component [StandardServer[-1]]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:238)
+	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:437)
+	at org.sonar.server.app.EmbeddedTomcat.terminate(EmbeddedTomcat.java:104)
+	at org.sonar.server.app.WebServer.hardStop(WebServer.java:83)
+	at org.sonar.process.ProcessEntryPoint$HardStopperThread.lambda$new$0(ProcessEntryPoint.java:219)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.catalina.LifecycleException: Failed to stop component [StandardService[Tomcat]]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:238)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:814)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	... 9 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: Failed to stop component [StandardEngine[Tomcat]]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:238)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:486)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	... 11 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: A child container failed during stop
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:1008)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	... 13 common frames omitted
+2021.09.22 19:52:04 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2021.09.22 19:52:57 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2021.09.22 19:53:02 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2021.09.22 19:53:03 INFO  web[][o.e.p.PluginsService] no modules loaded
+2021.09.22 19:53:03 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2021.09.22 19:53:03 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2021.09.22 19:53:03 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2021.09.22 19:53:08 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2021.09.22 19:53:08 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 7.9.5.38598 / cc0bd7b4d9e201f8b4939e5b674637feabf75207
+2021.09.22 19:53:18 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:53:18 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: /opt/sonarqube/data
+2021.09.22 19:53:18 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:53:22 WARN  web[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2021.09.22 19:53:24 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2021.09.22 19:53:24 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2021.09.22 19:53:25 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@31b07897 [pattern=UrlPattern{inclusions=[/api/system/migrate_db.*, ...], exclusions=[/api/properties*, ...]}]
+2021.09.22 19:53:26 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2021.09.22 19:53:30 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2021.09.22 19:53:32 INFO  web[][o.s.s.e.IndexCreator] Index [metadatas] is read-only. Making it writable...
+2021.09.22 19:53:32 INFO  web[][o.s.s.e.IndexCreator] Index [components] is read-only. Making it writable...
+2021.09.22 19:53:32 INFO  web[][o.s.s.e.IndexCreator] Create index [projectmeasures]
+2021.09.22 19:53:41 INFO  web[][o.s.s.e.IndexCreator] Create type projectmeasures/auth
+2021.09.22 19:53:41 INFO  web[][o.s.s.e.IndexCreator] Create index [rules]
+2021.09.22 19:53:50 INFO  web[][o.s.s.e.IndexCreator] Create type rules/rule
+2021.09.22 19:53:50 INFO  web[][o.s.s.e.IndexCreator] Create index [issues]
+2021.09.22 19:53:50 ERROR web[][o.s.s.p.Platform] Background initialization failed. Stopping SonarQube
+java.lang.IllegalStateException: Fail to execute ES index request for key 'issues.indexStructure' on index 'metadatas' on type 'metadata'
+	at org.sonar.server.es.request.ProxyIndexRequestBuilder.get(ProxyIndexRequestBuilder.java:43)
+	at org.sonar.server.es.request.ProxyIndexRequestBuilder.get(ProxyIndexRequestBuilder.java:31)
+	at org.sonar.server.es.metadata.MetadataIndexImpl.setMetadata(MetadataIndexImpl.java:108)
+	at org.sonar.server.es.metadata.MetadataIndexImpl.setHash(MetadataIndexImpl.java:52)
+	at org.sonar.server.es.IndexCreator.createIndex(IndexCreator.java:142)
+	at org.sonar.server.es.IndexCreator.lambda$start$1(IndexCreator.java:98)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(Unknown Source)
+	at java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.forEach(Unknown Source)
+	at org.sonar.server.es.IndexCreator.start(IndexCreator.java:95)
+	at org.sonar.core.platform.StartableCloseableSafeLifecyleStrategy.start(StartableCloseableSafeLifecyleStrategy.java:40)
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.start(AbstractInjectionFactory.java:84)
+	at org.picocontainer.behaviors.AbstractBehavior.start(AbstractBehavior.java:169)
+	at org.picocontainer.behaviors.Stored$RealComponentLifecycle.start(Stored.java:132)
+	at org.picocontainer.behaviors.Stored.start(Stored.java:110)
+	at org.picocontainer.DefaultPicoContainer.potentiallyStartAdapter(DefaultPicoContainer.java:1016)
+	at org.picocontainer.DefaultPicoContainer.startAdapters(DefaultPicoContainer.java:1009)
+	at org.picocontainer.DefaultPicoContainer.start(DefaultPicoContainer.java:767)
+	at org.sonar.core.platform.ComponentContainer.startComponents(ComponentContainer.java:135)
+	at org.sonar.server.platform.platformlevel.PlatformLevel.start(PlatformLevel.java:90)
+	at org.sonar.server.platform.platformlevel.PlatformLevel4.start(PlatformLevel4.java:545)
+	at org.sonar.server.platform.Platform.start(Platform.java:211)
+	at org.sonar.server.platform.Platform.startLevel34Containers(Platform.java:185)
+	at org.sonar.server.platform.Platform.access$500(Platform.java:46)
+	at org.sonar.server.platform.Platform$1.lambda$doRun$0(Platform.java:119)
+	at org.sonar.server.platform.Platform$AutoStarterRunnable.runIfNotAborted(Platform.java:371)
+	at org.sonar.server.platform.Platform$1.doRun(Platform.java:119)
+	at org.sonar.server.platform.Platform$AutoStarterRunnable.run(Platform.java:355)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.elasticsearch.cluster.block.ClusterBlockException: blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];
+	at org.elasticsearch.cluster.block.ClusterBlocks.indexBlockedException(ClusterBlocks.java:208)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction.blockExceptions(TransportReplicationAction.java:254)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction.access$500(TransportReplicationAction.java:99)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$ReroutePhase.doRun(TransportReplicationAction.java:779)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction.doExecute(TransportReplicationAction.java:171)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction.doExecute(TransportReplicationAction.java:99)
+	at org.elasticsearch.action.support.TransportAction$RequestFilterChain.proceed(TransportAction.java:167)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:139)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:81)
+	at org.elasticsearch.action.bulk.TransportBulkAction$BulkOperation.doRun(TransportBulkAction.java:440)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.bulk.TransportBulkAction.executeBulk(TransportBulkAction.java:553)
+	at org.elasticsearch.action.bulk.TransportBulkAction.doExecute(TransportBulkAction.java:290)
+	at org.elasticsearch.action.bulk.TransportBulkAction.doExecute(TransportBulkAction.java:92)
+	at org.elasticsearch.action.support.TransportAction$RequestFilterChain.proceed(TransportAction.java:167)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:139)
+	at org.elasticsearch.action.bulk.TransportSingleItemBulkWriteAction.doExecute(TransportSingleItemBulkWriteAction.java:69)
+	at org.elasticsearch.action.bulk.TransportSingleItemBulkWriteAction.doExecute(TransportSingleItemBulkWriteAction.java:44)
+	at org.elasticsearch.action.support.TransportAction$RequestFilterChain.proceed(TransportAction.java:167)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:139)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$OperationTransportHandler.messageReceived(TransportReplicationAction.java:283)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$OperationTransportHandler.messageReceived(TransportReplicationAction.java:275)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:66)
+	at org.elasticsearch.transport.TcpTransport$RequestHandler.doRun(TcpTransport.java:1087)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.common.util.concurrent.EsExecutors$DirectExecutorService.execute(EsExecutors.java:192)
+	at org.elasticsearch.transport.TcpTransport.handleRequest(TcpTransport.java:1046)
+	at org.elasticsearch.transport.TcpTransport.messageReceived(TcpTransport.java:932)
+	at org.elasticsearch.transport.TcpTransport.inboundMessage(TcpTransport.java:763)
+	at org.elasticsearch.transport.netty4.Netty4MessageChannelHandler.channelRead(Netty4MessageChannelHandler.java:53)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:323)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:297)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:241)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:556)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:510)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at java.lang.Thread.run(Unknown Source)
+2021.09.22 19:53:51 INFO  web[][o.s.p.ProcessEntryPoint] Hard stopping process
+2021.09.22 19:53:52 WARN  web[][o.s.p.ProcessEntryPoint$HardStopperThread] Can not stop in 1000ms
+2021.09.22 19:53:52 WARN  web[][o.s.s.a.EmbeddedTomcat] Failed to stop web server
+org.apache.catalina.LifecycleException: Failed to stop component [StandardServer[-1]]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:238)
+	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:437)
+	at org.sonar.server.app.EmbeddedTomcat.terminate(EmbeddedTomcat.java:104)
+	at org.sonar.server.app.WebServer.hardStop(WebServer.java:83)
+	at org.sonar.process.ProcessEntryPoint$HardStopperThread.lambda$new$0(ProcessEntryPoint.java:219)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.catalina.LifecycleException: Failed to stop component [StandardService[Tomcat]]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:238)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:814)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	... 9 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: Failed to stop component [StandardEngine[Tomcat]]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:238)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:486)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	... 11 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: A child container failed during stop
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:1008)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	... 13 common frames omitted
+2021.09.22 19:53:52 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2021.09.22 19:54:56 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2021.09.22 19:54:59 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2021.09.22 19:55:02 INFO  web[][o.e.p.PluginsService] no modules loaded
+2021.09.22 19:55:02 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2021.09.22 19:55:02 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2021.09.22 19:55:02 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2021.09.22 19:55:05 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2021.09.22 19:55:05 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 7.9.5.38598 / cc0bd7b4d9e201f8b4939e5b674637feabf75207
+2021.09.22 19:55:09 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:55:09 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: /opt/sonarqube/data
+2021.09.22 19:55:09 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:55:13 WARN  web[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2021.09.22 19:55:18 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2021.09.22 19:55:18 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2021.09.22 19:55:20 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@818b5aa [pattern=UrlPattern{inclusions=[/api/system/migrate_db.*, ...], exclusions=[/api/properties*, ...]}]
+2021.09.22 19:55:23 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2021.09.22 19:55:25 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2021.09.22 19:55:26 INFO  web[][o.s.s.e.IndexCreator] Index [metadatas] is read-only. Making it writable...
+2021.09.22 19:55:27 INFO  web[][o.s.s.e.IndexCreator] Index [components] is read-only. Making it writable...
+2021.09.22 19:55:27 INFO  web[][o.s.s.e.IndexCreator] Index [projectmeasures] is read-only. Making it writable...
+2021.09.22 19:55:27 INFO  web[][o.s.s.e.IndexCreator] Index [rules] is read-only. Making it writable...
+2021.09.22 19:55:27 INFO  web[][o.s.s.e.IndexCreator] Create index [issues]
+2021.09.22 19:55:35 INFO  web[][o.s.s.e.IndexCreator] Create type issues/auth
+2021.09.22 19:55:35 ERROR web[][o.s.s.p.Platform] Background initialization failed. Stopping SonarQube
+java.lang.IllegalStateException: Fail to execute ES put mapping request on indices 'issues' on type 'auth' with source '{"_routing":{"required":true},"_source":{"enabled":false},"dynamic":"false","properties":{"assignee":{"doc_values":"true","fields":{"sortable_analyzer":{"analyzer":"sortable_analyzer","fielddata":"true","index":"true","norms":"false","store":"false","type":"text"}},"index":"true","norms":"false","store":"false","type":"keyword"},"auth_allowAnyone":{"type":"boolean"},"auth_groupIds":{"type":"long"},"auth_userIds":{"type":"long"},"authorLogin":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"branch":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"component":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"cwe":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"dirPath":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"effort":{"type":"long"},"filePath":{"doc_values":"true","fields":{"sortable_analyzer":{"analyzer":"sortable_analyzer","fielddata":"true","index":"true","norms":"false","store":"false","type":"text"}},"index":"true","norms":"false","store":"false","type":"keyword"},"indexType":{"type":"keyword","norms":false,"store":false,"doc_values":false},"isMainBranch":{"type":"boolean"},"issueClosedAt":{"format":"date_time||epoch_second","type":"date"},"issueCreatedAt":{"format":"date_time||epoch_second","type":"date"},"issueUpdatedAt":{"format":"date_time||epoch_second","type":"date"},"join_issues":{"type":"join","relations":{"auth":"issue"}},"key":{"doc_values":"true","fields":{"sortable_analyzer":{"analyzer":"sortable_analyzer","fielddata":"true","index":"true","norms":"false","store":"false","type":"text"}},"index":"true","norms":"false","store":"false","type":"keyword"},"language":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"line":{"type":"integer"},"module":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"modulePath":{"analyzer":"uuid_module_analyzer","index":"true","type":"text"},"organization":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"owaspTop10":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"project":{"doc_values":"true","fields":{"sortable_analyzer":{"analyzer":"sortable_analyzer","fielddata":"true","index":"true","norms":"false","store":"false","type":"text"}},"index":"true","norms":"false","store":"false","type":"keyword"},"resolution":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"ruleId":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"sansTop25":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"severity":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"severityValue":{"type":"byte"},"sonarsourceSecurity":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"status":{"doc_values":"true","fields":{"sortable_analyzer":{"analyzer":"sortable_analyzer","fielddata":"true","index":"true","norms":"false","store":"false","type":"text"}},"index":"true","norms":"false","store":"false","type":"keyword"},"tags":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"},"type":{"doc_values":"true","index":"true","norms":"false","store":"false","type":"keyword"}}}'
+	at org.sonar.server.es.request.ProxyPutMappingRequestBuilder.get(ProxyPutMappingRequestBuilder.java:44)
+	at org.sonar.server.es.request.ProxyPutMappingRequestBuilder.get(ProxyPutMappingRequestBuilder.java:32)
+	at org.sonar.server.es.IndexCreator.createIndex(IndexCreator.java:160)
+	at org.sonar.server.es.IndexCreator.lambda$start$1(IndexCreator.java:98)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(Unknown Source)
+	at java.base/java.util.HashMap$ValueSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.forEach(Unknown Source)
+	at org.sonar.server.es.IndexCreator.start(IndexCreator.java:95)
+	at org.sonar.core.platform.StartableCloseableSafeLifecyleStrategy.start(StartableCloseableSafeLifecyleStrategy.java:40)
+	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.start(AbstractInjectionFactory.java:84)
+	at org.picocontainer.behaviors.AbstractBehavior.start(AbstractBehavior.java:169)
+	at org.picocontainer.behaviors.Stored$RealComponentLifecycle.start(Stored.java:132)
+	at org.picocontainer.behaviors.Stored.start(Stored.java:110)
+	at org.picocontainer.DefaultPicoContainer.potentiallyStartAdapter(DefaultPicoContainer.java:1016)
+	at org.picocontainer.DefaultPicoContainer.startAdapters(DefaultPicoContainer.java:1009)
+	at org.picocontainer.DefaultPicoContainer.start(DefaultPicoContainer.java:767)
+	at org.sonar.core.platform.ComponentContainer.startComponents(ComponentContainer.java:135)
+	at org.sonar.server.platform.platformlevel.PlatformLevel.start(PlatformLevel.java:90)
+	at org.sonar.server.platform.platformlevel.PlatformLevel4.start(PlatformLevel4.java:545)
+	at org.sonar.server.platform.Platform.start(Platform.java:211)
+	at org.sonar.server.platform.Platform.startLevel34Containers(Platform.java:185)
+	at org.sonar.server.platform.Platform.access$500(Platform.java:46)
+	at org.sonar.server.platform.Platform$1.lambda$doRun$0(Platform.java:119)
+	at org.sonar.server.platform.Platform$AutoStarterRunnable.runIfNotAborted(Platform.java:371)
+	at org.sonar.server.platform.Platform$1.doRun(Platform.java:119)
+	at org.sonar.server.platform.Platform$AutoStarterRunnable.run(Platform.java:355)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.elasticsearch.cluster.block.ClusterBlockException: blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];
+	at org.elasticsearch.cluster.block.ClusterBlocks.indicesBlockedException(ClusterBlocks.java:229)
+	at org.elasticsearch.action.admin.indices.mapping.put.TransportPutMappingAction.checkBlock(TransportPutMappingAction.java:81)
+	at org.elasticsearch.action.admin.indices.mapping.put.TransportPutMappingAction.checkBlock(TransportPutMappingAction.java:46)
+	at org.elasticsearch.action.support.master.TransportMasterNodeAction$AsyncSingleAction.doStart(TransportMasterNodeAction.java:173)
+	at org.elasticsearch.action.support.master.TransportMasterNodeAction$AsyncSingleAction.start(TransportMasterNodeAction.java:164)
+	at org.elasticsearch.action.support.master.TransportMasterNodeAction.doExecute(TransportMasterNodeAction.java:141)
+	at org.elasticsearch.action.support.master.TransportMasterNodeAction.doExecute(TransportMasterNodeAction.java:59)
+	at org.elasticsearch.action.support.TransportAction$RequestFilterChain.proceed(TransportAction.java:167)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:139)
+	at org.elasticsearch.action.support.HandledTransportAction$TransportHandler.messageReceived(HandledTransportAction.java:89)
+	at org.elasticsearch.action.support.HandledTransportAction$TransportHandler.messageReceived(HandledTransportAction.java:80)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:66)
+	at org.elasticsearch.transport.TcpTransport$RequestHandler.doRun(TcpTransport.java:1087)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.common.util.concurrent.EsExecutors$DirectExecutorService.execute(EsExecutors.java:192)
+	at org.elasticsearch.transport.TcpTransport.handleRequest(TcpTransport.java:1046)
+	at org.elasticsearch.transport.TcpTransport.messageReceived(TcpTransport.java:932)
+	at org.elasticsearch.transport.TcpTransport.inboundMessage(TcpTransport.java:763)
+	at org.elasticsearch.transport.netty4.Netty4MessageChannelHandler.channelRead(Netty4MessageChannelHandler.java:53)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:323)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:297)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:241)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:556)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:510)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at java.lang.Thread.run(Unknown Source)
+2021.09.22 19:55:36 INFO  web[][o.s.p.ProcessEntryPoint] Hard stopping process
+2021.09.22 19:55:36 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2021.09.22 19:56:30 INFO  web[][o.s.p.ProcessEntryPoint] Starting web
+2021.09.22 19:56:32 INFO  web[][o.a.t.u.n.NioSelectorPool] Using a shared selector for servlet write/read
+2021.09.22 19:56:34 INFO  web[][o.e.p.PluginsService] no modules loaded
+2021.09.22 19:56:34 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2021.09.22 19:56:34 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2021.09.22 19:56:34 INFO  web[][o.e.p.PluginsService] loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2021.09.22 19:56:38 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [127.0.0.1:9001]
+2021.09.22 19:56:38 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 7.9.5.38598 / cc0bd7b4d9e201f8b4939e5b674637feabf75207
+2021.09.22 19:56:39 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:56:39 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: /opt/sonarqube/data
+2021.09.22 19:56:39 INFO  web[][o.sonar.db.Database] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar
+2021.09.22 19:56:41 WARN  web[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2021.09.22 19:56:42 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /opt/sonarqube
+2021.09.22 19:56:42 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2021.09.22 19:56:43 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@25ffd395 [pattern=UrlPattern{inclusions=[/api/system/migrate_db.*, ...], exclusions=[/api/properties*, ...]}]
+2021.09.22 19:56:44 INFO  web[][o.s.s.a.EmbeddedTomcat] HTTP connector enabled on port 9000
+2021.09.22 19:56:45 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://update.sonarsource.org/update-center.properties (no proxy)
+2021.09.22 19:56:47 INFO  web[][o.s.s.e.IndexCreator] Index [metadatas] is read-only. Making it writable...
+2021.09.22 19:56:48 INFO  web[][o.s.s.e.IndexCreator] Index [components] is read-only. Making it writable...
+2021.09.22 19:56:48 INFO  web[][o.s.s.e.IndexCreator] Index [projectmeasures] is read-only. Making it writable...
+2021.09.22 19:56:49 INFO  web[][o.s.s.e.IndexCreator] Index [rules] is read-only. Making it writable...
+2021.09.22 19:56:49 INFO  web[][o.s.s.e.IndexCreator] Index [issues] is read-only. Making it writable...
+2021.09.22 19:56:49 INFO  web[][o.s.s.e.IndexCreator] Create index [users]
+2021.09.22 19:56:53 INFO  web[][o.s.s.e.IndexCreator] Create type users/user
+2021.09.22 19:56:54 INFO  web[][o.s.s.e.IndexCreator] Create index [views]
+2021.09.22 19:56:58 INFO  web[][o.s.s.e.IndexCreator] Create type views/view
+2021.09.22 19:56:58 INFO  web[][o.s.s.s.LogServerId] Server ID: BF41A1F2-AXwPECIgo4VoZzUngnoF
+2021.09.22 19:56:59 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/plugins/download
+2021.09.22 19:56:59 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/permissions/search_templates
+2021.09.22 19:56:59 INFO  web[][o.s.s.t.TelemetryDaemon] Sharing of SonarQube statistics is enabled.
+2021.09.22 19:56:59 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2021.09.22 19:56:59 INFO  web[][o.s.s.s.GeneratePluginIndex] Generate scanner plugin index
+2021.09.22 19:56:59 INFO  web[][o.s.s.s.RegisterPlugins] Register plugins
+2021.09.22 19:56:59 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
+2021.09.22 19:57:00 INFO  web[][o.s.s.q.RegisterQualityGates] Built-in quality gate's conditions of [Sonar way] has been updated
+2021.09.22 19:57:00 INFO  web[][o.s.s.r.RegisterRules] Register rules
+2021.09.22 19:57:00 INFO  web[][o.s.s.q.BuiltInQProfileRepositoryImpl] Load quality profiles
+2021.09.22 19:57:00 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2021.09.22 19:57:00 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2021.09.22 19:57:00 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceFilter@aeefd3c [pattern=UrlPattern{inclusions=[/api/issues/delete_comment.*, ...], exclusions=[/api/properties*, ...]}]
+2021.09.22 19:57:00 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.DeprecatedPropertiesWsFilter@6f79964b [pattern=UrlPattern{inclusions=[/api/properties/*], exclusions=[]}]
+2021.09.22 19:57:01 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.ws.WebServiceReroutingFilter@501bda57 [pattern=UrlPattern{inclusions=[/api/components/bulk_update_key, ...], exclusions=[]}]
+2021.09.22 19:57:01 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@7b66d28a [pattern=UrlPattern{inclusions=[/sessions/init/*], exclusions=[]}]
+2021.09.22 19:57:01 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@505e547c [pattern=UrlPattern{inclusions=[/oauth2/callback/*], exclusions=[]}]
+2021.09.22 19:57:01 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@7051b95e [pattern=UrlPattern{inclusions=[/api/authentication/login], exclusions=[]}]
+2021.09.22 19:57:01 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@43a2fb1d [pattern=UrlPattern{inclusions=[/api/authentication/logout], exclusions=[]}]
+2021.09.22 19:57:01 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@75162f0d [pattern=UrlPattern{inclusions=[/api/authentication/validate], exclusions=[]}]
+2021.09.22 19:57:01 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [rules/rule/activeRule] ...
+2021.09.22 19:57:02 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [rules/rule/activeRule] done | time=1632ms
+2021.09.22 19:57:02 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of types [rules/rule],[rules/rule/ruleExtension] ...
+2021.09.22 19:57:04 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of types [rules/rule],[rules/rule/ruleExtension] done | time=2184ms
+2021.09.22 19:57:04 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [users/user] ...
+2021.09.22 19:57:07 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [users/user] done | time=3072ms
+2021.09.22 19:57:08 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [components/auth/component] ...
+2021.09.22 19:57:08 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [components/auth/component] done | time=831ms
+2021.09.22 19:57:08 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [views/view] ...
+2021.09.22 19:57:11 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [views/view] done | time=2486ms
+2021.09.22 19:57:11 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [issues/auth/issue] ...
+2021.09.22 19:57:15 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [issues/auth/issue] done | time=3699ms
+2021.09.22 19:57:15 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of types [components/auth],[projectmeasures/auth],[issues/auth] ...
+2021.09.22 19:57:19 ERROR web[][o.s.s.p.Platform] Background initialization failed. Stopping SonarQube
+java.lang.IllegalStateException: Fail to execute ES index request for key 'issues.auth.initialized' on index 'metadatas' on type 'metadata'
+	at org.sonar.server.es.request.ProxyIndexRequestBuilder.get(ProxyIndexRequestBuilder.java:43)
+	at org.sonar.server.es.request.ProxyIndexRequestBuilder.get(ProxyIndexRequestBuilder.java:31)
+	at org.sonar.server.es.metadata.MetadataIndexImpl.setMetadata(MetadataIndexImpl.java:108)
+	at org.sonar.server.es.metadata.MetadataIndexImpl.setInitialized(MetadataIndexImpl.java:66)
+	at org.sonar.server.es.IndexerStartupTask.setInitialized(IndexerStartupTask.java:82)
+	at java.base/java.lang.Iterable.forEach(Unknown Source)
+	at org.sonar.server.es.IndexerStartupTask.indexUninitializedTypes(IndexerStartupTask.java:69)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(Unknown Source)
+	at org.sonar.server.es.IndexerStartupTask.execute(IndexerStartupTask.java:55)
+	at java.base/java.util.Optional.ifPresent(Unknown Source)
+	at org.sonar.server.platform.platformlevel.PlatformLevelStartup$1.doPrivileged(PlatformLevelStartup.java:86)
+	at org.sonar.server.user.DoPrivileged.execute(DoPrivileged.java:46)
+	at org.sonar.server.platform.platformlevel.PlatformLevelStartup.start(PlatformLevelStartup.java:82)
+	at org.sonar.server.platform.Platform.executeStartupTasks(Platform.java:196)
+	at org.sonar.server.platform.Platform.access$400(Platform.java:46)
+	at org.sonar.server.platform.Platform$1.lambda$doRun$1(Platform.java:121)
+	at org.sonar.server.platform.Platform$AutoStarterRunnable.runIfNotAborted(Platform.java:371)
+	at org.sonar.server.platform.Platform$1.doRun(Platform.java:121)
+	at org.sonar.server.platform.Platform$AutoStarterRunnable.run(Platform.java:355)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.elasticsearch.cluster.block.ClusterBlockException: blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];
+	at org.elasticsearch.cluster.block.ClusterBlocks.indexBlockedException(ClusterBlocks.java:208)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction.blockExceptions(TransportReplicationAction.java:254)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction.access$500(TransportReplicationAction.java:99)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$ReroutePhase.doRun(TransportReplicationAction.java:779)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction.doExecute(TransportReplicationAction.java:171)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction.doExecute(TransportReplicationAction.java:99)
+	at org.elasticsearch.action.support.TransportAction$RequestFilterChain.proceed(TransportAction.java:167)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:139)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:81)
+	at org.elasticsearch.action.bulk.TransportBulkAction$BulkOperation.doRun(TransportBulkAction.java:440)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.action.bulk.TransportBulkAction.executeBulk(TransportBulkAction.java:553)
+	at org.elasticsearch.action.bulk.TransportBulkAction.doExecute(TransportBulkAction.java:290)
+	at org.elasticsearch.action.bulk.TransportBulkAction.doExecute(TransportBulkAction.java:92)
+	at org.elasticsearch.action.support.TransportAction$RequestFilterChain.proceed(TransportAction.java:167)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:139)
+	at org.elasticsearch.action.bulk.TransportSingleItemBulkWriteAction.doExecute(TransportSingleItemBulkWriteAction.java:69)
+	at org.elasticsearch.action.bulk.TransportSingleItemBulkWriteAction.doExecute(TransportSingleItemBulkWriteAction.java:44)
+	at org.elasticsearch.action.support.TransportAction$RequestFilterChain.proceed(TransportAction.java:167)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:139)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$OperationTransportHandler.messageReceived(TransportReplicationAction.java:283)
+	at org.elasticsearch.action.support.replication.TransportReplicationAction$OperationTransportHandler.messageReceived(TransportReplicationAction.java:275)
+	at org.elasticsearch.transport.RequestHandlerRegistry.processMessageReceived(RequestHandlerRegistry.java:66)
+	at org.elasticsearch.transport.TcpTransport$RequestHandler.doRun(TcpTransport.java:1087)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at org.elasticsearch.common.util.concurrent.EsExecutors$DirectExecutorService.execute(EsExecutors.java:192)
+	at org.elasticsearch.transport.TcpTransport.handleRequest(TcpTransport.java:1046)
+	at org.elasticsearch.transport.TcpTransport.messageReceived(TcpTransport.java:932)
+	at org.elasticsearch.transport.TcpTransport.inboundMessage(TcpTransport.java:763)
+	at org.elasticsearch.transport.netty4.Netty4MessageChannelHandler.channelRead(Netty4MessageChannelHandler.java:53)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:323)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:297)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:241)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:656)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:556)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:510)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:470)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:909)
+	at java.lang.Thread.run(Unknown Source)
+2021.09.22 19:57:20 INFO  web[][o.s.p.ProcessEntryPoint] Hard stopping process
+2021.09.22 19:57:20 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2021.09.22 19:57:21 WARN  web[][o.s.p.ProcessEntryPoint$HardStopperThread] Can not stop in 1000ms
+2021.09.22 19:57:21 WARN  web[][o.s.s.a.EmbeddedTomcat] Failed to stop web server
+org.apache.catalina.LifecycleException: Failed to stop component [StandardServer[-1]]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:238)
+	at org.apache.catalina.startup.Tomcat.stop(Tomcat.java:437)
+	at org.sonar.server.app.EmbeddedTomcat.terminate(EmbeddedTomcat.java:104)
+	at org.sonar.server.app.WebServer.hardStop(WebServer.java:83)
+	at org.sonar.process.ProcessEntryPoint$HardStopperThread.lambda$new$0(ProcessEntryPoint.java:219)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.catalina.LifecycleException: Failed to stop component [StandardService[Tomcat]]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:238)
+	at org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:814)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	... 9 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: Failed to stop component [StandardEngine[Tomcat]]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:238)
+	at org.apache.catalina.core.StandardService.stopInternal(StandardService.java:486)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	... 11 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: A child container failed during stop
+	at org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:1008)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226)
+	... 13 common frames omitted
+2021.09.22 19:57:22 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
